@@ -1,4 +1,5 @@
 import json
+import getpass
 
 
 def login_user():
@@ -12,7 +13,7 @@ def login_user():
         return
     
     user_email=input("Enter Email: ")
-    user_password=input("Enter Password: ")
+    user_password=getpass.getpass("Enter Password: ")
 
     user_found = False
     for user in user_data:

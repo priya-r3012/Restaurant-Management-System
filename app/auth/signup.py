@@ -12,7 +12,8 @@ class User:
         print("Please enter your details for sign up:")
 
         name = input("Enter your name: ")
-        if  name.isalpha() and name.title():
+        name = name.title()
+        if  name.isalpha():
              pass
   
         else:

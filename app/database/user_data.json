@@ -12,5 +12,19 @@
         "password": "puft4657",
         "role": "staff",
         "user_id": "77c4"
+    },
+    {
+        "name": "priya",
+        "email": "p@.com",
+        "password": "priya3082004",
+        "role": "staff",
+        "user_id": "c0d2"
+    },
+    {
+        "name": "Priya",
+        "email": "p@.com",
+        "password": "priya3082004",
+        "role": "staff",
+        "user_id": "8cc0"
     }
 ]
