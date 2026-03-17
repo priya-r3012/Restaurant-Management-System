@@ -1,6 +1,7 @@
 import uuid 
 import json
 import os
+import getpass
 class User:
     def __init__(self,role="staff"):
        
@@ -23,7 +24,7 @@ class User:
             print("Invalid email.Email should be @ address")
             return None
 
-        password = input("Create a password: ")
+        password = getpass.getpass("Create a password: ")
         if  password.isalnum() and len(password)>=8:
             pass
 
