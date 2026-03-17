@@ -4,7 +4,7 @@ from app.auth.login import login_user
 class authentication:
  
    def menu(self):
-      while True:
+    
          
         print("1. Signup")
         print("2. Login")
@@ -15,7 +15,7 @@ class authentication:
     
     
         option=int(input("select any option: "))    
-
+    
 
         if option == 1:
             User().sign_up()

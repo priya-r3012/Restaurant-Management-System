@@ -26,5 +26,26 @@
         "password": "priya3082004",
         "role": "staff",
         "user_id": "8cc0"
+    },
+    {
+        "name": "Ruhi",
+        "email": "r@.com",
+        "password": "priya3082004",
+        "role": "staff",
+        "user_id": "2e17"
+    },
+    {
+        "name": "Tarun",
+        "email": "t@.com",
+        "password": "tarun592010",
+        "role": "staff",
+        "user_id": "ae64"
+    },
+    {
+        "name": "Khushi",
+        "email": "k@.com",
+        "password": "khushi4567",
+        "role": "staff",
+        "user_id": "7ea920"
     }
 ]
