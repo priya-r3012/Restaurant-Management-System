@@ -1,27 +1,6 @@
 [
     {
         "name": "Priya",
-        "email": "p@gmail.com",
-        "password": "pri3082004",
-        "role": "staff",
-        "user_id": "0420"
-    },
-    {
-        "name": "priya",
-        "email": "p@gmail.com",
-        "password": "puft4657",
-        "role": "staff",
-        "user_id": "77c4"
-    },
-    {
-        "name": "priya",
-        "email": "p@.com",
-        "password": "priya3082004",
-        "role": "staff",
-        "user_id": "c0d2"
-    },
-    {
-        "name": "Priya",
         "email": "p@.com",
         "password": "priya3082004",
         "role": "staff",
