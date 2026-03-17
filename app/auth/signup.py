@@ -11,16 +11,16 @@ class User:
         print("Please enter your details for sign up:")
 
         name = input("Enter your name: ")
-        if  name.isalpha() and name[0].isupper():
-            pass
+        if  name.isalpha() and name.title():
+             pass
   
         else:
-            print("Invalid name. Name should be only alphabet and first character must be capital!")
+            print("Invalid name. Name should be only alphabet!")
             return None
 
         email = input("Enter your email: ")
-        if "@gmail.com" not in email:
-            print("Invalid email.Email should be @gmail.com address")
+        if "@" not in email:
+            print("Invalid email.Email should be @ address")
             return None
 
         password = input("Create a password: ")
