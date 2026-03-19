@@ -26,5 +26,26 @@
         "password": "khushi4567",
         "role": "staff",
         "user_id": "7ea920"
+    },
+    {
+        "name": "Ruchi",
+        "email": "ruchi@.com",
+        "password": "ruchi09876",
+        "role": "staff",
+        "user_id": "2ed167"
+    },
+    {
+        "name": "Asdfgh",
+        "email": "a@.com",
+        "password": "lkjhgfd6789",
+        "role": "staff",
+        "user_id": "db9392"
+    },
+    {
+        "name": "Mahak",
+        "email": "m@.com",
+        "password": "mahak098765",
+        "role": "staff",
+        "user_id": "2b3eb0"
     }
 ]

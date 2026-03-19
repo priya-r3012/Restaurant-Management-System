@@ -11,10 +11,10 @@ class User:
 
     def sign_up(self):
       
-        print("Please enter your details for sign up:")
+        print("\nPlease enter your details for sign up:")
 
         while True:
-           name = input("Enter your name: ")
+           name = input("\nEnter Your Name: ")
            name = name.title()
            if  name.isalpha():
               break
@@ -29,7 +29,7 @@ class User:
             user_details=[]          
 
         while True:
-            email = input("Enter your email: ")
+            email = input("Enter Your Email: ")
             if "@" not in email and "." not in email:
                print("Invalid email.Email should contain  @  and . both in address") 
 
@@ -39,12 +39,21 @@ class User:
             break
         
         while True:
-            password = pwinput.pwinput("Create password: ")
+            password = pwinput.pwinput("Create P" \
+            "assword: ")
             if  password.isalnum() and len(password)>=8:
                break
     
             else:
                print("Invalid password. Password should contain  alphabet or numbers!")
+
+        while True:
+            experience = input("You have any past experience(Yes/No): ")   
+            if experience in ["yes" , "no"]:
+                break
+            else:
+                print("Invalid input.Please enter Yes or No.") 
+                continue    
         
     
         if not name or not email or not password:

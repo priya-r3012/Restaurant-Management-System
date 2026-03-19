@@ -4,17 +4,20 @@ from app.auth.login import login_user
 class authentication:
  
    def menu(self):
-    
-         
-        print("1. Signup")
-        print("2. Login")
-        print("3. Exit")
+    while True:
+        print("-"*32)
+        print("-------REGISTRATION MENU--------")
+        print("="*32)
+        print("|" +  "1.  Signup".ljust(30) + "|")
+        print("|" +  "2.  Login".ljust(30) + "|")
+        print("|" +  "3.  Exit".ljust(30) + "|")
+        print("-"*32)
         self.user_input()
 
    def user_input(self):
     
     
-        option=int(input("select any option: "))    
+        option=int(input("Select Any option: "))    
     
 
         if option == 1:
