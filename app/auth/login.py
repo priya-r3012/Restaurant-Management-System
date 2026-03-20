@@ -1,5 +1,6 @@
 import json
-import getpass
+import pwinput
+
 
 
 def login_user():
@@ -9,11 +10,11 @@ def login_user():
         with open (r"app/database/user_data.json",'r') as file:
           user_data = json.load(file) 
     except FileNotFoundError:
-        print("Error: User file not found")
+        print("Error: User file not found.")
         return
     
     user_email=input("Enter Email: ")
-    user_password=getpass.getpass("Enter Password: ")
+    user_password=pwinput.pwinput("Enter Password: ")
 
     user_found = False
     for user in user_data:
@@ -24,4 +25,4 @@ def login_user():
     if user_found:
         print("Login successfull!") 
     else:
-        print("Invalid email or password!")
+        print("User not found.Invalid email or password!")

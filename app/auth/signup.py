@@ -3,6 +3,7 @@ import json
 import os
 import pwinput
 
+
 class User:
     def __init__(self,role="staff"):
        
@@ -10,7 +11,7 @@ class User:
           self.role = role 
 
     def sign_up(self):
-      
+        
         print("\nPlease enter your details for sign up:")
 
         while True:
@@ -31,7 +32,7 @@ class User:
         while True:
             email = input("Enter Your Email: ")
             if "@" not in email and "." not in email:
-               print("Invalid email.Email should contain  @  and . both in address") 
+               print("Invalid email.Email should contain  @  and . both in address.") 
 
             if any(user["email"] == email for user in user_details):
                 print("Email already registered!")   
@@ -45,7 +46,7 @@ class User:
                break
     
             else:
-               print("Invalid password. Password should contain  alphabet or numbers!")
+                print("Invalid password. Password should contain  alphabet or numbers!")
 
         while True:
             experience = input("You have any past experience(Yes/No): ")   
@@ -57,7 +58,7 @@ class User:
         
     
         if not name or not email or not password:
-              print("Error: All  are required. Please try again.")
+               print("Error: All  are required. Please try again.")
          
     
         user_id=str(uuid.uuid4())[:6]
