@@ -4,7 +4,7 @@ import pwinput
 
 
 def login_user():
-    print("---LOGIN---")
+    print("\n---LOGIN---")
     try:
     
         with open (r"app/database/user_data.json",'r') as file:
@@ -13,8 +13,8 @@ def login_user():
         print("Error: User file not found.")
         return
     
-    user_email=input("Enter Email: ")
-    user_password=pwinput.pwinput("Enter Password: ")
+    user_email=input("* Enter Email: ")
+    user_password=pwinput.pwinput("* Enter Password: ")
 
     user_found = False
     for user in user_data:

@@ -7,13 +7,6 @@
         "user_id": "8cc0"
     },
     {
-        "name": "Ruhi",
-        "email": "r@.com",
-        "password": "priya3082004",
-        "role": "staff",
-        "user_id": "2e17"
-    },
-    {
         "name": "Tarun",
         "email": "t@.com",
         "password": "tarun592010",
@@ -21,31 +14,10 @@
         "user_id": "ae64"
     },
     {
-        "name": "Khushi",
-        "email": "k@.com",
-        "password": "khushi4567",
+        "name": "Ruhi",
+        "email": "ruhi@.com",
+        "password": "ruhi123456",
         "role": "staff",
-        "user_id": "7ea920"
-    },
-    {
-        "name": "Ruchi",
-        "email": "ruchi@.com",
-        "password": "ruchi09876",
-        "role": "staff",
-        "user_id": "2ed167"
-    },
-    {
-        "name": "Asdfgh",
-        "email": "a@.com",
-        "password": "lkjhgfd6789",
-        "role": "staff",
-        "user_id": "db9392"
-    },
-    {
-        "name": "Mahak",
-        "email": "m@.com",
-        "password": "mahak098765",
-        "role": "staff",
-        "user_id": "2b3eb0"
+        "user_id": "af5774"
     }
 ]
