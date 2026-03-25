@@ -1,3 +1,4 @@
+from app.menu.menu_list import Menu_Rms
 class admin_dashboard():
 
     def admin_menu(self):

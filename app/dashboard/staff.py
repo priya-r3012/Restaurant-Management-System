@@ -1,3 +1,5 @@
+from app.menu.menu_list import Menu_Rms
+
 class staff_dashboard():
 
     def staff_menu(self):
@@ -6,10 +8,9 @@ class staff_dashboard():
         print("-"*32)
         print("/" + "1.  View Menu")
         print("/" + "2.  Take Order")
-        print("/" + "3.  Booking")
+        print("/" + "3.  Update")
         print("/" + "4.  Cancel Order")
-        print("/" + "5.  Generate Bill")
-        print("/" + "6.  Exit")
+        print("/" + "5.  Exit")
         print("-"*32)
         self.staff_input()
 
@@ -17,16 +18,14 @@ class staff_dashboard():
         option=int(input("Select any Option: "))    
     
         if option == 1:
-             self.view_menu()
+             Menu_Rms().display_menu()
         elif option == 2:
-             self.take_order()
+             Menu_Rms().order_item()
         elif option == 3:
-             self.booking()
+             Menu_Rms().update_item()
         elif option == 4:
-             self.cancel_order()
+             Menu_Rms().cancel_item()
         elif option == 5:
-             self.generate_bill()
-        elif option == 6:
              exit()
         else:
             print("invalid option")  

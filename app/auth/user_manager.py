@@ -2,12 +2,13 @@ from app.auth.signup import User
 from app.auth.login import login_user
 
 
+
 class authentication:
  
    def menu(self):
     while True:
         print("-"*32)
-        print("-------REGISTRATION MENU--------")
+        print("------- PICKWICK REGISTRATION MENU--------")
         print("="*32)
         print("/" +  "1.  Signup")
         print("/" +  "2.  Login")
