@@ -78,14 +78,11 @@ class Menu_Rms:
         self.cart = []
         self.total = 0
 
-    def load_menuu(self):
-     try:
-      with open(r"app\database\menu_items.json",'r') as json_file:
-        self.menu=json.load(json_file)
-     except:
-        print("Error during load menu") 
+    def save_menu(self):
+      with open(r"app\database\menu_items.json",'w') as json_file:  
+        json.dump(self.menu,json_file,indent=4)    
 
-
+    
     
         self.cart=[]
 
@@ -115,6 +112,7 @@ class Menu_Rms:
 
     def select_item(self):
         print("\n------- SELECT ITEM -------")
+        cart = []
         while True:
             try:
                 user_input = input("\nEnter Item ID: ")
@@ -123,7 +121,7 @@ class Menu_Rms:
                 if item_id == 0: break
 
              
-                item = next((i for i in self.menu if i["id"] == item_id), None)
+                item = next((i for i in self.menu if i["id"] == item_id))
 
                 if item:
                     option = input(f"Select plate for {item['name']} (h=Half / f=Full): ").lower()
@@ -139,26 +137,31 @@ class Menu_Rms:
                     })
                     self.total += price
                     print(f"Added: {item['name']} ({plate}) - ₹{price}")
+
+                    more=input("Add more items?(yes/no): ")  
+                    if more=='no':
+                     break
+
                 else:
                     print(" Invalid Item ID!")
 
             except ValueError:
                 print(" Please enter a valid number!")
 
-    def cancel_item(self):
-        if not self.cart:
-            print("\nYour cart is empty.")
-            return
+            return cart,self.total
 
+    def cancel_item(self):
+       
         while True:
             print("\n--- Your Cart ---")
-            for i, item in enumerate(self.cart, 1):
-                print(f"{i}. {item['name']} ({item['plate']}) - ₹{item['price']}")
+            for i in range(len(self.cart)):
+                item = self.cart[i]
+                print(f"{i+1}. {item['name']} ({item['plate']}) - ₹{item['price']}")
             
             print(f"Current Total: ₹{self.total}")
             
-            cancel = input("\nRemove an item? (y/n): ").lower()
-            if cancel == 'y':
+            cancel = input("\nRemove an item? (yes/no): ").lower()
+            if cancel == 'yes':
                 try:
                     num = int(input("Enter item number to remove: "))
                     if 1 <= num <= len(self.cart):
@@ -172,13 +175,13 @@ class Menu_Rms:
             else:
                 break
 
-    def update_item(self, cart, total):
+    def update_item(self):
 
         while True:
             print("\nYour Cart:")
 
             i = 0
-            for item in cart:
+            for item in self.cart:
                 print(i + 1, ".", item[1], "(", item[2], ")")
                 i += 1
 
@@ -188,9 +191,9 @@ class Menu_Rms:
                 try:
                     num = int(input("Enter item number to update: "))
 
-                    if num >= 1 and num <= len(cart):
+                    if num >= 1 and num <= len(self.cart):
 
-                        item = cart[num - 1]
+                        item = self.cart[num - 1]
 
                         total -= item[3]
 
@@ -207,7 +210,7 @@ class Menu_Rms:
                         
                         total += item[3]
 
-                        print("🔄 Updated:", item[1], "(", item[2], ")")
+                        print(" Updated:", item[1], "(", item[2], ")")
 
                     else:
                         print(" Invalid number")
@@ -217,12 +220,9 @@ class Menu_Rms:
 
             else:
                 break
-    def save_menu(self):
-      with open(r"app\database\menu_items.json",'w') as json_file:  
-        json.dump(self.menu,json_file,indent=4)
-
-        
-""" obj=Menu_Rms()
+            return cart,self.total
+    
+obj=Menu_Rms()
 
 while True:
         print("-"*32)
@@ -251,8 +251,3 @@ while True:
         else:
             print("invalid option")  
 
-
-   
-
-
- """
