@@ -1,6 +1,7 @@
 import json
 import pwinput
-
+from app.dashboard.admin import Admin_dashboard
+from app.dashboard.staff import Staff_dashboard
 
 
 def login_user():
@@ -19,6 +20,11 @@ def login_user():
     user_found = False
     for user in user_data:
         if user_email == user["email"] and user_password == user["password"]:
+            if user["role"]=="Admin":
+               Admin_dashboard()
+            elif user["role"]=="Staff" :
+                Staff_dashboard()
+
             user_found=True
             break
      

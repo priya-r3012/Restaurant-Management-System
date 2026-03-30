@@ -1,4 +1,4 @@
-class booking_table():
+class Booking_table:
 
     def __init__(self):
        
@@ -67,7 +67,7 @@ class booking_table():
 
 
 
-obj = Table_Booking()
+obj = Booking_table()
 
 
 while True:
