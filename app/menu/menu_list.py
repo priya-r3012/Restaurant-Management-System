@@ -172,7 +172,7 @@ class Menu_Rms():
 
                     if change == "yes":
 
-                        # 👉 Remove old item
+                    
                         old_item = self.cart.pop(num - 1)
                         self.total -= old_item["price"]
 
@@ -209,7 +209,7 @@ class Menu_Rms():
                             print("Invalid item ID ")
 
                     else:
-                        print("No change made ⏭")
+                        print("No change made ")
 
                 else:
                     print("Invalid number ")
