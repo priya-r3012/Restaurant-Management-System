@@ -21,9 +21,12 @@ def login_user():
     for user in user_data:
         if user_email == user["email"] and user_password == user["password"]:
             if user["role"]=="Admin":
-               Admin_dashboard()
+               admin=Admin_dashboard()
+               admin.admin_menu()
+
             elif user["role"]=="Staff" :
-                Staff_dashboard()
+               staff=Staff_dashboard()
+               staff.staff_menu()
 
             user_found=True
             break

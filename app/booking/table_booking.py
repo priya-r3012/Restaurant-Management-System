@@ -69,7 +69,6 @@ class Booking_table:
 
 obj = Booking_table()
 
-
 while True:
     print("\n===== TABLE BOOKING =====")
     print("1. Show Tables")
@@ -94,3 +93,5 @@ while True:
 
     else:
         print(" Invalid choice")
+
+obj = Booking_table()        
