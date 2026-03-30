@@ -20,7 +20,7 @@ class staff_dashboard():
         if option == 1:
              Menu_Rms().display_menu()
         elif option == 2:
-             Menu_Rms().order_item()
+             Menu_Rms().select_item()
         elif option == 3:
              Menu_Rms().update_item()
         elif option == 4:

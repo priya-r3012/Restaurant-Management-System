@@ -1,6 +1,3 @@
-
-
-
 def generate_bill(self):
         
 

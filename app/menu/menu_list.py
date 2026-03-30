@@ -1,6 +1,6 @@
 
 import json
-class Menu_Rms:
+class Menu_Rms():
 
     def __init__(self):
         self.menu = [
@@ -148,81 +148,136 @@ class Menu_Rms:
             except ValueError:
                 print(" Please enter a valid number!")
 
-            return cart,self.total
-
-    def cancel_item(self):
-       
-        while True:
-            print("\n--- Your Cart ---")
-            for i in range(len(self.cart)):
-                item = self.cart[i]
-                print(f"{i+1}. {item['name']} ({item['plate']}) - ₹{item['price']}")
-            
-            print(f"Current Total: ₹{self.total}")
-            
-            cancel = input("\nRemove an item? (yes/no): ").lower()
-            if cancel == 'yes':
-                try:
-                    num = int(input("Enter item number to remove: "))
-                    if 1 <= num <= len(self.cart):
-                        removed = self.cart.pop(num - 1)
-                        self.total -= removed['price']
-                        print(f" Removed: {removed['name']}")
-                    else:
-                        print(" Invalid number")
-                except ValueError:
-                    print(" Invalid input")
-            else:
-                break
+        return cart,self.total
 
     def update_item(self):
 
-        while True:
-            print("\nYour Cart:")
+      while True:
+        print("\n--- Your Cart ---")
 
-            i = 0
-            for item in self.cart:
-                print(i + 1, ".", item[1], "(", item[2], ")")
-                i += 1
+        i = 1
+        for item in self.cart:
+            print(i, item["name"], item["plate"], "₹", item["price"])
+            i += 1
 
-            update = input("\nDo you want to update any item? (y/n): ")
+        choice = input("\nDo you want to update item? (yes/no): ").lower()
 
-            if update == 'y':
-                try:
-                    num = int(input("Enter item number to update: "))
+        if choice == "yes":
+            try:
+                num = int(input("Enter item number: "))
 
-                    if num >= 1 and num <= len(self.cart):
+                if num >= 1 and num <= len(self.cart):
 
-                        item = self.cart[num - 1]
+                    change = input("Do you want to change item ID? (yes/no): ").lower()
 
-                        total -= item[3]
+                    if change == "yes":
 
-    
-                        new_choice = input("Enter new plate (h/f): ").lower()
+                        # 👉 Remove old item
+                        old_item = self.cart.pop(num - 1)
+                        self.total -= old_item["price"]
 
-                        if new_choice == 'h':
-                            item[2] = "Half"
-                            item[3] = self.menu[item[0]]['half']
+                        print("Removed:", old_item["name"])
+
+                        item_id = int(input("Enter new item ID: "))
+
+                        if item_id in self.menu:
+
+                            plate = input("Enter plate (h/f): ").lower()
+
+                            if plate == "h":
+                                plate_type = "Half"
+                                price = self.menu[item_id]["half"]
+                            else:
+                                plate_type = "Full"
+                                price = self.menu[item_id]["full"]
+
+                            name = self.menu[item_id]["name"]
+
+                            new_item = {
+                                "id": item_id,
+                                "name": name,
+                                "plate": plate_type,
+                                "price": price
+                            }
+
+                            self.cart.append(new_item)
+                            self.total += price
+
+                            print("Item updated successfully ")
+
                         else:
-                            item[2] = "Full"
-                            item[3] = self.menu[item[0]]['full']
-
-                        
-                        total += item[3]
-
-                        print(" Updated:", item[1], "(", item[2], ")")
+                            print("Invalid item ID ")
 
                     else:
-                        print(" Invalid number")
+                        print("No change made ⏭")
 
-                except:
-                    print(" Wrong input")
+                else:
+                    print("Invalid number ")
 
-            else:
-                break
-            return cart,self.total
+            except:
+                print("Wrong input ")
+
+        add_more = input("\nDo you want to add a new item? (yes/no): ").lower()
+
+        if add_more == "yes":
+            try:
+                item_id = int(input("Enter item ID: "))
+
+                if item_id in self.menu:
+
+                    plate = input("Enter plate (h/f): ").lower()
+
+                    if plate == "h":
+                        plate_type = "Half"
+                        price = self.menu[item_id]["half"]
+                    else:
+                        plate_type = "Full"
+                        price = self.menu[item_id]["full"]
+
+                    name = self.menu[item_id]["name"]
+
+                    new_item = {
+                        "id": item_id,
+                        "name": name,
+                        "plate": plate_type,
+                        "price": price
+                    }
+
+                    self.cart.append(new_item)
+                    self.total += price
+
+                    print("New item added successfully ")
+
+                else:
+                    print("Invalid item ID ")
+
+            except:
+                print("Wrong input ")
+
+        else:
+            break
+
+      return self.cart, self.total
+ 
+
+    def cancel_item(self):
     
-obj=Menu_Rms()
+        print("\n--- Your Cart ---")
+
+        if len(self.cart) == 0:
+            print("Cart is empty")
+            return
+
+        remove= input("Do you want to clear full cart? (yes/no): ").lower()
+
+        if remove == "yes":
+            self.cart.clear()    
+            self.total = 0        
+            print(" Cart cleared successfully!")
+        else:
+            print(" Cancelled")
+    
+""" obj=Menu_Rms()
 
 while True:
         print("-"*32)
@@ -251,3 +306,4 @@ while True:
         else:
             print("invalid option")  
 
+ """
