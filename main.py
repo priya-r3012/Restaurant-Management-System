@@ -1,6 +1,6 @@
-from app.auth.user_manager import authentication
-obj=authentication()
-obj.menu()
+from app.auth.user_manager import Authentication
+obj=Authentication()
+
 
 
 

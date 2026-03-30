@@ -1,11 +1,11 @@
 from app.menu.menu_list import Menu_Rms
-from app.booking.table_booking import booking_table
-from app.report.restaurant_report import order_complete_weekly
-class admin_dashboard():
+from app.booking.table_booking import Booking_table
+from app.report.restaurant_report import Order_complete_weekly
+class Admin_dashboard:
 
     def admin_menu(self):
         print("ADMIN MENU - RMS")
-        print("1. Manage menu")
+        print("1. Display menu")
         print("2. Order")
         print("3. Booking")
         print("4. Report")
@@ -16,13 +16,13 @@ class admin_dashboard():
         option=int(input("Select any Option: "))    
     
         if option == 1:
-             self.manage_menu()
+             Menu_Rms().display_menu()
         elif option == 2:
-             self.order()
+             Menu_Rms().order()
         elif option == 3:
-             booking_table()
+             Booking_table()
         elif option == 4:
-             order_complete_weekly().weekly_report()
+             Order_complete_weekly().weekly_report()
         elif option == 5:
              exit()
         else:

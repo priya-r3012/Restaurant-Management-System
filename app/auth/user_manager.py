@@ -1,10 +1,14 @@
 from app.auth.signup import User
 from app.auth.login import login_user
-from app.dashboard.staff import staff_dashboard
+from app.dashboard.admin import Admin_dashboard
+from app.dashboard.staff import Staff_dashboard
 
 
 
-class authentication:
+
+
+
+class Authentication:
  
    def menu(self):
     while True:

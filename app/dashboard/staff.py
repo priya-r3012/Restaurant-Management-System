@@ -1,6 +1,6 @@
 from app.menu.menu_list import Menu_Rms
 
-class staff_dashboard():
+class Staff_dashboard:
 
     def staff_menu(self):
         print("-"*32)

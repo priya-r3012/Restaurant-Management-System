@@ -3,10 +3,10 @@ import json
 
 
 
-class order_complete_weekly():
+class Order_complete_weekly:
   def weekly_report(self):
     try:
-        with open("app/database/app/database/sale_report_weekly.json", "r") as file:
+        with open(r"app/database/app/database/sale_report_weekly.json", "r") as file:
             data = json.load(file)
     except:
         print("No sales data found")
@@ -33,11 +33,6 @@ class order_complete_weekly():
     print("-"*40)
     print(f"Total Orders: {count}")
     print(f"Total Sales: ₹{total}")
-
-    if daily:
-        best_day = max(daily, key=daily.get)
-        print(f"Best Day: {best_day} (₹{daily[best_day]})")
-
     print("-"*40)
 
 

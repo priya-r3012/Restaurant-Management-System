@@ -1,4 +1,10 @@
-def generate_bill(self):
+class Bill:
+ 
+    def __init__(self,cart):
+        self.cart=cart
+     
+
+    def generate_bill(self):
         
 
         print("\n------ BILL ------")
