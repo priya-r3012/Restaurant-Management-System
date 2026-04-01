@@ -20,13 +20,10 @@ def login_user():
     user_found = False
     for user in user_data:
         if user_email == user["email"] and user_password == user["password"]:
-            if user["role"]=="Admin":
-               admin=Admin_dashboard()
-               admin.admin_menu()
+           
+            return user["role"]
 
-            elif user["role"]=="Staff" :
-               staff=Staff_dashboard()
-               staff.staff_menu()
+        
 
             user_found=True
             break

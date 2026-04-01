@@ -108,7 +108,8 @@ class Menu_Rms():
             for item in items:
              print(f"{item['id']:<30}{item['name']:<35}₹{item['half']:<30}₹{item['full']:<30}")
 
-        print("-" * 100)
+        print("-" * 100)  
+        
 
     def select_item(self):
         print("\n------- SELECT ITEM -------")
@@ -118,7 +119,8 @@ class Menu_Rms():
                 user_input = input("\nEnter Item ID: ")
                 item_id = int(user_input)
                 
-                if item_id == 0: break
+                if item_id == 0: 
+                    break
 
              
                 item = next((i for i in self.menu if i["id"] == item_id))
@@ -221,10 +223,15 @@ class Menu_Rms():
 
         if add_more == "yes":
             try:
-                item_id = int(input("Enter item ID: "))
+                item_id = (input("Enter item ID: "))
 
-                if item_id in self.menu:
-
+                found_item=False
+                for product in self.save_menu:
+                    if product['id'] == item_id:
+                        found_item=True
+                        break
+                    
+                if found_item:
                     plate = input("Enter plate (h/f): ").lower()
 
                     if plate == "h":
@@ -305,5 +312,6 @@ while True:
             exit()
         else:
             print("invalid option")  
+
 
  """

@@ -67,7 +67,7 @@ class Booking_table:
 
 
 
-obj = Booking_table()
+""" obj = Booking_table()
 
 while True:
     print("\n===== TABLE BOOKING =====")
@@ -94,4 +94,4 @@ while True:
     else:
         print(" Invalid choice")
 
-obj = Booking_table()        
+    """

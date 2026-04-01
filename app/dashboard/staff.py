@@ -2,15 +2,15 @@ from app.menu.menu_list import Menu_Rms
 
 class Staff_dashboard:
 
-    def menu(self):
+    def staff_menu(self):
         print("-"*32)
         print("=======STAFF MENU - RMS=========")
         print("-"*32)
-        print("/" + "1.  View Menu")
-        print("/" + "2.  Take Order")
-        print("/" + "3.  Update")
-        print("/" + "4.  Cancel Order")
-        print("/" + "5.  Exit")
+        print( "1.  View Menu")
+        print( "2.  Take Order")
+        print( "3.  Update")
+        print( "4.  Cancel Order")
+        print( "5.  Exit")
         print("-"*32)
         self.staff_input()
 
@@ -27,6 +27,7 @@ class Staff_dashboard:
              Menu_Rms().cancel_item()
         elif option == 5:
              exit()
+             return
         else:
             print("invalid option")  
 
