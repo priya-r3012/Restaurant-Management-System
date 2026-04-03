@@ -113,7 +113,7 @@ class Menu_Rms():
 
     def select_item(self):
         print("\n------- SELECT ITEM -------")
-        cart = []
+        self.cart = []
         while True:
             try:
                 user_input = input("\nEnter Item ID: ")
@@ -139,6 +139,7 @@ class Menu_Rms():
                     })
                     self.total += price
                     print(f"Added: {item['name']} ({plate}) - ₹{price}")
+                   
 
                     more=input("Add more items?(yes/no): ")  
                     if more=='no':
@@ -149,8 +150,8 @@ class Menu_Rms():
 
             except ValueError:
                 print(" Please enter a valid number!")
-
-        return cart,self.total
+      
+        return self.cart,self.total,self.show_cart
 
     def update_item(self):
 
@@ -223,7 +224,7 @@ class Menu_Rms():
 
         if add_more == "yes":
             try:
-                item_id = (input("Enter item ID: "))
+                item_id = int(input("Enter item ID: "))
 
                 found_item=False
                 for product in self.save_menu:
@@ -255,8 +256,11 @@ class Menu_Rms():
 
                     print("New item added successfully ")
 
+                    self.show_cart() 
+
                 else:
                     print("Invalid item ID ")
+          
 
             except:
                 print("Wrong input ")

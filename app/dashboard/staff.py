@@ -3,6 +3,7 @@ from app.menu.menu_list import Menu_Rms
 class Staff_dashboard:
 
     def staff_menu(self):
+       while True: 
         print("-"*32)
         print("=======STAFF MENU - RMS=========")
         print("-"*32)

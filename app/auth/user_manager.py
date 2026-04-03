@@ -31,7 +31,7 @@ class Authentication:
             user_role=login_user()
 
             if user_role=="admin":
-                obj=Admin_dashboard()
+                obj=Admin_dashboard(cart=[])
                 obj.admin_menu()
                 return
 

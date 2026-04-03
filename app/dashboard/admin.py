@@ -3,9 +3,14 @@ from app.booking.table_menu import Table
 from app.report.restaurant_report import Order_complete_weekly
 from app.billing.customer_bill import Bill
 
+
 class Admin_dashboard:
+    
+    def __init__(self,cart):
+        self.cart=cart
 
     def admin_menu(self):
+       while True: 
         print("-"*32)
         print("ADMIN MENU - RMS")
         print("1. Display menu")
@@ -27,13 +32,13 @@ class Admin_dashboard:
              Menu_Rms().select_item()
 
         elif option == 3:
-             Table().Booking_table()
+             Table().tablemenu()
              
         elif option == 4:
              Order_complete_weekly().weekly_report()
 
         elif option == 5:
-             Bill().generate_bill()
+             Bill(cart=self.cart).generate_bill()
 
         elif option == 6:
              exit() 

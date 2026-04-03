@@ -1,7 +1,8 @@
 from app.booking.table_booking import Booking_table
 
 class Table:
-   def tablemenu(): 
+  def tablemenu(self): 
+   while True:
     print("\n===== TABLE BOOKING =====")
     print("1. Show Tables")
     print("2. Book Table")
@@ -21,6 +22,7 @@ class Table:
 
     elif choice == '4':
         print(" Thank you!")
+        break
 
     else:
         print(" Invalid choice")
